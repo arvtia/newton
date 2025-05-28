@@ -46,13 +46,7 @@ const cardData = [
     content: "Education empowers minds. \nNever stop learning and growing. \nKnowledge unlocks new possibilities. \nInvest in your future with education!",
     icon: "bi bi-book",
     button: "Learn More",
-  },
-  {
-    id: 9,
-    content: "Community and connections matter. \nBuild meaningful relationships. \nSupport and uplift others. \nTogether, we create a better world!",
-    icon: "bi bi-people",
-    button: "Learn More",
-  },
+  } 
 ];
 
 const Cards =() =>{
