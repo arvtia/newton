@@ -6,6 +6,9 @@ import Blogs from "./pages/blogs";
 import Home from "./pages/home";
 import Feature from "./pages/features";
 import { FullBlog } from "./components/FullBlog";
+import Product from "./pages/product";
+import ProductEach from "./components/productDetails";
+
 
 
 function App() {
@@ -19,7 +22,9 @@ function App() {
                     <Route path="blogs" element={<Blogs />} />
                     <Route path="*" element={<Home />} />
                     <Route path="/features" element={<Feature />} />
-                    <Route path="/blogs/:id" element={<FullBlog />} />
+                    <Route path="/blogs/:meta" element={<FullBlog />} />
+                    <Route path="/products" element={<Product />}/>
+                    <Route path="/products/:id" element={<ProductEach />}/>
                 </Routes>
             <Footer />
       </BrowserRouter>

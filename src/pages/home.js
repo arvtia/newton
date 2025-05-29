@@ -1,10 +1,12 @@
-import FullBlog from "../components/FullBlog"
+
+import Cards from "../components/cards"
+import Home1 from "../components/home"
 
 const Home = () =>{
     return(
         <>
-        <h1 className="text-center py-5 my-5">Home page</h1>
-        
+        <Home1/>
+        <Cards/>
         </>
     )
 }
