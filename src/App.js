@@ -5,6 +5,7 @@ import Footer from "./components/footer";
 import Blogs from "./pages/blogs";
 import Home from "./pages/home";
 import Feature from "./pages/features";
+import { FullBlog } from "./components/FullBlog";
 
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
                     <Route path="blogs" element={<Blogs />} />
                     <Route path="*" element={<Home />} />
                     <Route path="/features" element={<Feature />} />
-                    {/* <Route path="/blogs/:id" element={<Anything/>} /> */}
+                    <Route path="/blogs/:id" element={<FullBlog />} />
                 </Routes>
             <Footer />
       </BrowserRouter>

@@ -1,7 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 // const fullBlogData = [
 //     {id: 1, title: "", firstParah: " ", img:"src", imgCaption:"", mainParah:"",img2:"", publishedDate: "" }
 // ]
+
+
 
 const fullBlogData = [
     {
@@ -91,64 +93,77 @@ const fullBlogData = [
 ];
 
 
-const FullBlog = () =>{
-    return(
-        <div className="py-4 mt-5">
-            <div className="container">
-                <div className="row gy-4 gy-lg-3 gy-xl-4">
-                    <div className="col-12 col-lg-10 col-xl-10 justify-content-center">
-                        {
-                            fullBlogData.map((b)=>(
-                                <div className="py-3 mt-3">
-                                    <div className="col-12 col-md-11 col-xl-11 col-lg-10">
-                                        <div className="mb-2">
-                                            <h4 className="text-dark text-start"><strong>{b.title}</strong></h4>
-                                            <hr className="hr"/>
-                                        </div>
-                                        <div className="text-body-secondary ">
-                                            <p className="fs-6">{b.firstParah}</p>
-                                        </div>
-                                        <hr className="hr mb-3"/>
-                                        <figure className="figure">
-                                            <img src={b.img} className="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure."></img>
-                                            <figcaption className="figure-caption">{b.imgCaption}</figcaption>
-                                        </figure>
-                                        
-                                        <div className="mb-3">
-                                            <p className="fs-6 ">{b.mainParah}</p>
-                                        </div>
-                                        <div className="mb-3">
-                                            <img src={b.img2} alt="" className="img-fluid rounded" />
-                                            <figcaption>{b.figcaption}</figcaption>
-                                        </div>
-                                        <hr className="hr mb-2"/>
-                                        <p className="fs-6 text-dark">Published on : {b.publishedDate} </p>
-                                    </div>  
-                                </div>
-                            ))
-                        }
-                    </div>
+// const fullBlogData = [
+//   { id: 1, title: "Blog Title", firstParah: "Intro text", img: "src", imgCaption: "", mainParah: "", img2: "", publishedDate: "2025-05-29" },
+//   // Add more blog data objects here
+// ];
+
+const FullBlog = () => {
+  const { id } = useParams();
+  const blog = fullBlogData.find((b) => b.id === parseInt(id));
+
+  if (!blog) return <p className="text-danger text-center">Blog not found.</p>;
+
+  return (
+    <div className="py-4 mt-5">
+      <div className="container">
+        <div className="row gy-4 gy-lg-3 gy-xl-4">
+          <div className="col-12 col-lg-10 col-xl-10 justify-content-center">
+            <div className="py-3 mt-3">
+              <div className="col-12 col-md-11 col-xl-11 col-lg-10">
+                <div className="mb-2">
+                  <h4 className="text-dark text-start">
+                    <strong>{blog.title}</strong>
+                  </h4>
+                  <hr className="hr" />
                 </div>
-            </div>
-        </div>
-    )
-}
-
-
-const CollectionLinks = () =>{
-    return(
-        <div className="py-4 my-4">
-            <div className="row gy-2 gy-lg-3">
-                <div className="col-11 col-md-11 col-lg-11 col-xl-10 mx-auto">
-                    <div className="container">
-                        <Link to></Link>
-                    </div>
+                <div className="text-body-secondary">
+                  <p className="fs-6">{blog.firstParah}</p>
                 </div>
+                <hr className="hr mb-3" />
+                <figure className="figure">
+                  <img
+                    src={blog.img}
+                    className="figure-img img-fluid rounded"
+                    alt="A generic square placeholder image with rounded corners in a figure."
+                  />
+                  <figcaption className="figure-caption">{blog.imgCaption}</figcaption>
+                </figure>
+                <div className="mb-3">
+                  <p className="fs-6">{blog.mainParah}</p>
+                </div>
+                <div className="mb-3">
+                  <img src={blog.img2} alt="" className="img-fluid rounded" />
+                  <figcaption>{blog.figcaption}</figcaption>
+                </div>
+                <hr className="hr mb-2" />
+                <p className="fs-6 text-dark">Published on: {blog.publishedDate}</p>
+              </div>
             </div>
+          </div>
         </div>
-    )
-}
+      </div>
+    </div>
+  );
+};
+
+export default FullBlog;
+
+
+// const CollectionLinks = () =>{
+//     return(
+//         <div className="py-4 my-4">
+//             <div className="row gy-2 gy-lg-3">
+//                 <div className="col-11 col-md-11 col-lg-11 col-xl-10 mx-auto">
+//                     <div className="container">
+//                         <Link to={"/blog/"}></Link>
+//                     </div>
+//                 </div>
+//             </div>
+//         </div>
+//     )
+// }
 
 
 
-export {FullBlog, CollectionLinks}
+export {FullBlog}

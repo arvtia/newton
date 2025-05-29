@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const cardData = [
   {
     id: 1,
@@ -46,32 +48,31 @@ const cardData = [
     content: "Education empowers minds. \nNever stop learning and growing. \nKnowledge unlocks new possibilities. \nInvest in your future with education!",
     icon: "bi bi-book",
     button: "Learn More",
-  } 
+  }
 ];
 
-const Cards =() =>{
-    return(
-        <div className="py-4 py-lg-5 mt-5">
-            <div className="mb-4">
-                <div className="col-12 col-lg-11 col-xl-11 justify-content-center">
-                    <div className="my-3 gy-4 gy-lg-3 d-flex flex-wrap justify-content-center">
-                        {/* i wanna insert the cards in here  using map function */}
-                        { cardData.map((card)=>(
-                            <div className=" card p-3 m-2" key={card.id} style={{width:"250px"}} >
-                                <i className={`${card.icon} fs-1 text-primary`}></i>
-                                <p className="mt-2">{card.content}</p>
-                                <button className="btn btn-light extra-shdow-soft">{card.button}</button>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </div>
+const Cards = () => {
+  return (
+    <div className="py-4 py-lg-5 mt-5">
+      <div className="mb-4">
+        <div className="col-12 col-lg-11 col-xl-11 justify-content-center">
+          <div className="my-3 gy-4 gy-lg-3 d-flex flex-wrap justify-content-center">
+            {/* Mapping through cardData to render cards dynamically */}
+            {cardData.map((card) => (
+              <div className="card p-3 m-2" key={card.id} style={{ width: "250px" }}>
+                <i className={`${card.icon} fs-1 text-primary`}></i>
+                <p className="mt-2">{card.content}</p>
+                {/* Link to individual FullBlog page */}
+                <Link to={`/blogs/${card.id}`} >
+                  <button className="btn btn-bg-light extra-shdow-soft">{card.button}</button>
+                </Link>
+              </div>
+            ))}
+          </div>
         </div>
-    )
-}
-
-
+      </div>
+    </div>
+  );
+};
 
 export default Cards;
-
-
