@@ -76,18 +76,31 @@ const RegisterNew = () =>{
     )
 }
 
-function handleSubmit(){
-    alert("what ? did u really submit it?")
-}
+
 
 
 const ContactUs = () =>{
-    
     return(
         <div className="py-4 my-5">
             <div className="row py-lg-5 gy-4">
+                <h4 className="text-center fw-bold">Contact Us</h4>
                 <div className="col-11 col-lg-6 col-xl-6 mx-auto">
-                    <form action={handleSubmit}>
+                    <form>
+                        <div className="mb-3">
+                            <div className="form-floating">
+                                <select
+                                    className="form-select"
+                                    id="floatingSelect"
+                                >
+                                <option >Choose Catergory</option>
+                                    <option value={1}>Customer Support</option>
+                                    <option value={2}>Career</option>
+                                    <option value={3}>Report Complaint</option>
+                                </select>
+                                <label htmlFor="floatingSelect">Works with selects</label>
+                            </div>
+
+                        </div>
                         <div className="mb-3">
                             <div className="form-floating">
                                 <input 
@@ -95,6 +108,8 @@ const ContactUs = () =>{
                                 type="email"
                                 placeholder=""
                                 id="email"
+                                pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
+                                required
                                 />
                                 <label htmlFor="email">Enter your Email</label>
                             </div>
@@ -107,6 +122,9 @@ const ContactUs = () =>{
                                     className="form-control"
                                     placeholder=""
                                     id="First name"
+                                    pattern="^[A-Za-z]+$"
+                                    required
+
                                     />
                                     <label htmlFor="First name">First Name</label>
                                 </div>
@@ -118,6 +136,8 @@ const ContactUs = () =>{
                                     className="form-control"
                                     placeholder=""
                                     id="Last name"
+                                    pattern="^[A-Za-z]+$"
+                                    required
                                     />
                                     <label htmlFor="Last name">Last Name</label>
                                 </div>
@@ -128,11 +148,11 @@ const ContactUs = () =>{
                                 <textarea
                                     className="form-control"
                                     placeholder="Leave a comment here"
-                                    id="floatingTextarea2"
+                                    
                                     style={{ height: 100 }}
                                     defaultValue={""}
                                 />
-                                <label htmlFor="floatingTextarea2">Comments</label>
+                                <label>Comments</label>
                             </div>
                         </div>
 
@@ -149,4 +169,100 @@ const ContactUs = () =>{
 }
 
 
-export {ContactUs, LoginFrom, RegisterNew};
+const SubscriptionFrom = () =>{
+    return (
+        <div className="py-4 my-5 gy-3">
+            <div className="mb-4">
+                <div className="row gy-4 gx-2">
+                    <div className="col-11 col-md-6 col-lg-7 col-xl-7 mx-auto">
+                        <div className="mb-3">
+                            <form >
+                                <div className="row py-4 my-4">
+                                    <div className="col-12 col-md-6 col-xl-6 col-lg-7">
+                                        <h1>Subscription From</h1>
+                                        <p className="text-secondary">please read the below informations before option for the subcription</p>
+                                    </div>
+                                </div>
+                                <hr  className="hr"/>
+                                <div className="mb-4">
+                                    <p className="fw-bold px-4 py-4">Please complete all the information below</p>
+                                </div>
+                                <label htmlFor="name" className="fw-bold">Name</label>
+                                <div className="row gy-2 my-3">
+                                    <div className="col-4 gx-2">
+                                        <div className="form-floating">
+                                            <input 
+                                            type="text" 
+                                            placeholder=""
+                                            className="form-control"
+                                            id="firstN"
+                                            />
+                                            <label htmlFor="firstN">First Name</label>
+                                        </div>
+                                    </div>
+                                    {/* another impot */}
+                                    <div className="col-4 gx-2">
+                                        <div className="form-floating">
+                                            <input 
+                                            type="text" 
+                                            placeholder=""
+                                            className="form-control"
+                                            id="firstN"
+                                            />
+                                            <label htmlFor="firstN">Middle Name</label>
+                                        </div>
+                                    </div>
+                                    {/* another input */}
+                                    <div className="col-4 gx-2">
+                                        <div className="form-floating">
+                                            <input 
+                                            type="text" 
+                                            placeholder=""
+                                            className="form-control"
+                                            id="firstN"
+                                            />
+                                            <label htmlFor="firstN">Last Name</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/* another div mb-3 */}
+                                <div className="mb-3">
+                                    <div className="row gy-2">
+                                        <div className="col-6 ">
+                                            <div className="form-floating">
+                                                <input 
+                                                type="number" 
+                                                className="form-control"
+                                                placeholder=""
+                                                id="idknumber?"
+                                                />
+                                                <label htmlFor="idknumber?">Phone Number</label>
+                                            </div>
+                                        </div>
+                                        <div className="col-6 ">
+                                            <div className="form-floating">
+                                                <input 
+                                                type="Email" 
+                                                className="form-control"
+                                                placeholder=""
+                                                id="idkemail"
+                                                />
+                                                <label htmlFor="idkemail">Email</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/* another mb-down-2 */}
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+
+
+
+export {ContactUs, LoginFrom, RegisterNew, SubscriptionFrom};
