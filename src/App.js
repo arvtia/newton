@@ -8,6 +8,7 @@ import Feature from "./pages/features";
 import { FullBlog } from "./components/FullBlog";
 import Product from "./pages/product";
 import ProductEach from "./components/productDetails";
+import Example1 from "./pages/examples";
 
 
 
@@ -17,7 +18,7 @@ function App() {
       <BrowserRouter>
             <Navbar />
                 <Routes>
-                    <Route path="/" element={<Home />} />
+                    <Route path="/" element={<Example1 />} />
                     <Route path="about" element={<AboutUS />} />
                     <Route path="blogs" element={<Blogs />} />
                     <Route path="*" element={<Home />} />
