@@ -81,7 +81,7 @@ const ProductEach = () => {
                             <h4>{product.ProdName}</h4>
                         </div>
                         <div className="row gy-2 gy-lg-3 gy-xl-4">
-                            <div className="col-5 mx-auto mt-4">
+                            <div className="col-10 col-lg-10 col-xl-10 mx-auto mt-4">
                                 <img  src={product.ProdImg} alt="product-img" className="img-fluid rounded" height={"100%"} width={"100%"} style={{objectFit:"cover"}}/>
                             </div>
                             <div className="mb-2">
