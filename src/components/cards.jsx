@@ -63,7 +63,7 @@ const Cards = () => {
   return (
     <div className="py-4 py-lg-5 mt-5">
       <div className="mb-4">
-        <div className="col-12 col-lg-11 col-xl-11 justify-content-center">
+        <div className="col-12 col-lg-11 col-xl-11 mx-auto">
           <div className="my-3 gy-4 gy-lg-3 d-flex flex-wrap justify-content-center">
             {/* Mapping through cardData to render cards dynamically */}
             {cardData.map((card) => (
