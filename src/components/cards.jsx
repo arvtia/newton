@@ -67,7 +67,7 @@ const Cards = () => {
           <div className="my-3 gy-4 gy-lg-3 d-flex flex-wrap justify-content-center">
             {/* Mapping through cardData to render cards dynamically */}
             {cardData.map((card) => (
-              <div className="card p-3 m-2" key={card.id} style={{ width: "250px" }}>
+              <div className="card p-3 m-2" key={card.id} style={{ width:"320px" }}>
                 <i className={`${card.icon} fs-1 text-primary`}></i>
                 <p className="mt-2">{card.content}</p>
                 {/* Link to individual FullBlog page */}

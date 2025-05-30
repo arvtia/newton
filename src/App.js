@@ -8,6 +8,8 @@ import Feature from "./pages/features";
 import { FullBlog } from "./components/FullBlog";
 import Product from "./pages/product";
 import ProductEach from "./components/productDetails";
+import FromsAll from "./components/forms/forms";
+import { ContactUs, LoginFrom, RegisterNew } from "./components/forms/formComponents/loginForm";
 
 
 
@@ -26,6 +28,12 @@ function App() {
                     <Route path="/blogs/:meta" element={<FullBlog />} />
                     <Route path="/products" element={<Product />}/>
                     <Route path="/products/:id" element={<ProductEach />}/>
+                    <Route path="/forms" element={<FromsAll/>} />
+                   <Route path="/forms" element={<FromsAll />}>
+                        <Route path="login" element={<LoginFrom />} />
+                        <Route path="register" element={<RegisterNew />} />
+                        <Route path="contact" element={<ContactUs />} />
+                    </Route>
                 </Routes>
             <Footer />
       </BrowserRouter>

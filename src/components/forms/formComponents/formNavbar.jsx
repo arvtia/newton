@@ -1,11 +1,14 @@
+import { Link } from "react-router-dom";
+
+
 const FormNavbar =() =>{
     return(
         <div className="py-3 my-5 py-xl-4">
-            <nav className="navbar navbar-expand-lg bg-body-tertiary">
+            <nav className="navbar navbar-expand-lg bg-body-tertiary shadow-soft">
                 <div className="container-fluid">
-                    <a className="navbar-brand" href="#">
-                        Navbar
-                    </a>
+                    <Link to={"/forms"} className="navbar-brand text-primary fw-bold "> 
+                            Froms
+                    </Link>
                     <button
                     className="navbar-toggler"
                     type="button"
@@ -19,20 +22,19 @@ const FormNavbar =() =>{
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div className="navbar-nav">
-                            <a className="nav-link active" aria-current="page" href="#">
-                            Home
-                            </a>
-                            <a className="nav-link" href="#">
-                            Features
-                            </a>
-                            <a className="nav-link" href="#">
-                            Pricing
-                            </a>
+                            <Link to={"contact"} className="nav-link">
+                                Contact
+                            </Link>
+                            <Link to={"login"} className="nav-link">
+                                Login Form
+                            </Link>
+                            <Link to={"register"} className="nav-link">
+                                Register Form
+                            </Link>
                         </div>
                     </div>
                 </div>
-                </nav>
-
+            </nav>
         </div>
     )
 }

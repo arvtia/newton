@@ -1,5 +1,6 @@
 
 import Cards from "../components/cards"
+import { ContactUs } from "../components/forms/formComponents/loginForm"
 import Home1 from "../components/home"
 
 const Home = () =>{
@@ -7,6 +8,7 @@ const Home = () =>{
         <>
         <Home1/>
         <Cards/>
+        <ContactUs/>
         </>
     )
 }
