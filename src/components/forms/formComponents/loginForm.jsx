@@ -363,6 +363,64 @@ const SubscriptionFrom = () =>{
 }
 
 
+const CheckOutForm = () =>{
+    return(
+        <div className="py-5 my-4 gy-lg-3">
+            <div className="mb-3">
+                <div className="row gy-2">
+                    {/* first half showing the form */}
+                    <div className="col-12 col-lg-7 col-xl-7 px-4">
+                        <div className="mb-3">
+                            <p className="fs-4">Shipping Address</p>
+                        </div>
+                        <div className="mb-3">
+                            <div className="row gy-3 gy-xl-3">
+                                <div className="col-6 col-md-6 col-lg-6">
+                                    <label htmlFor="Fname" className="label-sm py-2">First Name*</label>
+                                    <input type="text" placeholder="Enter your name" className="form-control" />
+                                </div>
+                                <div className="col-6 col-md-6 col-lg-6">
+                                    <label htmlFor="Fname" className="label-sm py-2">First Name*</label>
+                                    <input type="text" placeholder="Enter your name" className="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        {/* another input box */}
+                        <div className="mb-3">
+                            <div className="row gy-3 gy-xl-3">
+                                <div className="col-6 col-md-6 col-lg-6">
+                                    <label htmlFor="Fname" className="label-sm py-2">Email*</label>
+                                    <input type="email" placeholder="jack@gmail.com" className="form-control" />
+                                </div>
+                                <div className="col-12 col-lg-6 col-xl-6">
+                                    <label htmlFor="inputgorup" className="label-sm py-2">Phone number*</label>
+                                    <div className="input-group mb-3">
+                                        <select className="form-select" id="inputGroupSelect02" style={{ maxWidth: "80px" }}>
+                                            <option selected="">IND</option>
+                                            <option value={1}>AUS</option>
+                                            <option value={2}>ID</option>
+                                            <option value={3}>UK</option>
+                                        </select>
+                                        <input type="number" className="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {/* another input box */}
+
+                    </div>
+
+                    {/* another half cart info */}
+                    <div className="col-12 col-lg-4 col-xl-4">
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
 
 
-export {ContactUs, LoginFrom, RegisterNew, SubscriptionFrom};
+
+
+export {ContactUs, LoginFrom, RegisterNew, SubscriptionFrom, CheckOutForm};

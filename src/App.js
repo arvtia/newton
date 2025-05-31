@@ -9,7 +9,7 @@ import { FullBlog } from "./components/FullBlog";
 import Product from "./pages/product";
 import ProductEach from "./components/productDetails";
 import FromsAll from "./components/forms/forms";
-import { ContactUs, LoginFrom, RegisterNew, SubscriptionFrom } from "./components/forms/formComponents/loginForm";
+import { CheckOutForm, ContactUs, LoginFrom, RegisterNew, SubscriptionFrom } from "./components/forms/formComponents/loginForm";
 
 
 
@@ -34,6 +34,7 @@ function App() {
                         <Route path="register" element={<RegisterNew />} />
                         <Route path="contact" element={<ContactUs />} />
                         <Route path="subscription" element={<SubscriptionFrom />} />
+                        <Route path="checkout" element={<CheckOutForm />} />
                     </Route>
                 </Routes>
             <Footer />

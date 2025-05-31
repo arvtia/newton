@@ -34,6 +34,9 @@ const FormNavbar =() =>{
                             <Link to={"subscription"} className="nav-link">
                                 Subscription
                             </Link>
+                            <Link to={"checkout"} className="nav-link">
+                                Check out
+                            </Link>
                         </div>
                     </div>
                 </div>
