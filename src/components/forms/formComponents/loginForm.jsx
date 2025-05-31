@@ -171,7 +171,7 @@ const ContactUs = () =>{
 
 const SubscriptionFrom = () =>{
     return (
-        <div className="py-4 my-5 gy-3">
+        <div className="py-4 my-5 gy-3 ">
             <div className="mb-4">
                 <div className="row gy-4 gx-2">
                     <div className="col-11 col-md-6 col-lg-7 col-xl-7 mx-auto">
@@ -185,11 +185,11 @@ const SubscriptionFrom = () =>{
                                 </div>
                                 <hr  className="hr"/>
                                 <div className="mb-4">
-                                    <p className="fw-bold px-4 py-4">Please complete all the information below</p>
+                                    <p className="fw-bold py-4">Please complete all the information below</p>
                                 </div>
-                                <label htmlFor="name" className="fw-bold">Name</label>
                                 <div className="row gy-2 my-3">
-                                    <div className="col-4 gx-2">
+                                    <div className="col-4 ">
+                                        <label htmlFor="name" className="fw-bold fs-5 py-2 sm-none">Name</label>
                                         <div className="form-floating">
                                             <input 
                                             type="text" 
@@ -201,7 +201,8 @@ const SubscriptionFrom = () =>{
                                         </div>
                                     </div>
                                     {/* another impot */}
-                                    <div className="col-4 gx-2">
+                                    <div className="col-4">
+                                        <label htmlFor="name" className="fw-bold fs-5 py-2 sm-none">Middle Name</label>
                                         <div className="form-floating">
                                             <input 
                                             type="text" 
@@ -213,7 +214,8 @@ const SubscriptionFrom = () =>{
                                         </div>
                                     </div>
                                     {/* another input */}
-                                    <div className="col-4 gx-2">
+                                    <div className="col-4 ">
+                                        <label htmlFor="name" className="fw-bold fs-5 py-2 sm-none">Last Name</label>
                                         <div className="form-floating">
                                             <input 
                                             type="text" 
@@ -229,6 +231,7 @@ const SubscriptionFrom = () =>{
                                 <div className="mb-3">
                                     <div className="row gy-2">
                                         <div className="col-6 ">
+                                            <p className="fw-bold fs-5 sm-none">Phone Number</p>
                                             <div className="form-floating">
                                                 <input 
                                                 type="number" 
@@ -240,6 +243,7 @@ const SubscriptionFrom = () =>{
                                             </div>
                                         </div>
                                         <div className="col-6 ">
+                                            <p className="fw-bold fs-5 sm-none ">Email</p>
                                             <div className="form-floating">
                                                 <input 
                                                 type="Email" 
@@ -253,6 +257,102 @@ const SubscriptionFrom = () =>{
                                     </div>
                                 </div>
                                 {/* another mb-down-2 */}
+                                <div className="mb-3">
+                                    <div className="row gy-2 gy-lg-3">
+                                        <div className="col-12 col-md-12 col-lg-12">
+                                            <p className="fs-5 fw-bold sm-none">Address</p>
+                                            <div className="form-floating">
+                                                <input 
+                                                type="text" 
+                                                placeholder=""
+                                                className="form-control"
+                                                id="addres"
+                                                />
+                                                <label htmlFor="addres">street address</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/* nanother input box */}
+                                <div className="mb-3">
+                                    <div className="row gy-3 gy-xl-3">
+                                        <div className="col-12 col-lg-12 col-xl-12">
+                                            <div className="form-floating">
+                                                <input 
+                                                type="text" 
+                                                placeholder=""
+                                                className="form-control"
+                                                id="next-address"
+                                                />
+                                                <label htmlFor="next-address">Street Address Lane 2 </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/* input box for state province */}
+                                <div className="mb-3">
+                                    <div className="row gy-2 gy-lg-2">
+                                        <div className="col-6">
+                                            <div className="form-floating">
+                                                <input 
+                                                type="text"
+                                                className="form-control"
+                                                placeholder=""
+                                                id="idkcity?"
+                                                />
+                                                <label htmlFor="idkcity?">City</label>
+                                            </div>
+                                        </div>
+                                        <div className="col-6">
+                                            <div className="form-floating">
+                                                <input 
+                                                type="text"
+                                                className="form-control"
+                                                placeholder=""
+                                                id="idkcity?"
+                                                />
+                                                <label htmlFor="idkcity?">State / Province</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/* another input section  */}
+                                <div className="mb-3">
+                                    <div className="row gy-3">
+                                        <div className="col-12 col-lg-12 col-xl-12">
+                                            <div className="form-floating">
+                                                <input 
+                                                type="text" 
+                                                className="form-control"
+                                                id="zipcode"
+                                                placeholder=""
+                                                />
+                                                <label htmlFor="zipcode">Postal ID, Zip Code</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/* comments and quesiton input */}
+                                <div className="mb-3">
+                                    <p className="fw-bold fs-5 py-2">Any Comments or Questions</p>
+                                    <div className="form-floating">
+                                        <textarea 
+                                        className="form-control"
+                                        placeholder=""
+                                        id="textarea"
+                                        style={{height:"100px"}}
+                                        >
+                                        </textarea>
+                                        <label htmlFor="textarea">Type anything</label>
+                                    </div>
+                                </div>
+                                <div className="mb-3">
+                                    <div className="row gy-3">
+                                        <div className="col-12 col-md-6 div.col-lg-6 col-xl-6 mx-auto">
+                                            <button type="submit" className="btn shadow-soft">Submit</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </form>
                         </div>
                     </div>
