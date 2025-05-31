@@ -407,6 +407,22 @@ const CheckOutForm = () =>{
                             </div>
                         </div>
                         {/* another input box */}
+                        <div className="mb-3">
+                            <div className="row gy-3">
+                                <div className="col-4 col-lg-4 col-xl-4">
+                                    <label htmlFor="" className="label-sm py-2">City</label>
+                                    <input type="text" className="form-control" placeholder="city"/>
+                                </div>
+                                <div className="col-4 col-lg-4 col-xl-4">
+                                    <label htmlFor="" className="label-sm py-2">State</label>
+                                    <input type="text" className="form-control" placeholder="state"/>
+                                </div>
+                                <div className="col-4 col-lg-4 col-xl-4">
+                                    <label htmlFor="" className="label-sm py-2">Zip code</label>
+                                    <input type="text" className="form-control" placeholder="zip code"/>
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
 
