@@ -382,7 +382,7 @@ console.log(findAmount()); // Outputs: 3399
 const CheckOutForm = () =>{
     return(
         <div className="py-5 my-4 gy-lg-3">
-            <p className="fs-3 fw-bold my-3 text-center">CHECK OUT FORM</p>
+            
             <div className="mb-3 mx-auto px-3 ">
                 <div className="row gy-2">
                     {/* first half showing the form */}
