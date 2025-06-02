@@ -9,7 +9,7 @@ const LoginFrom =() =>{
     const [ passwordError, setPasswordError] = useState("");
 
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    const passwordRegex= /.{8}/;
+    const passwordRegex= /.{8,}/;
     const handleEmailChange = (e) => {
     const value = e.target.value;
     setEmail(value);
@@ -87,7 +87,7 @@ const RegisterNew = () =>{
     
 
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    const passwordRegex = /.{8}/;
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$%#@&*^!]).{8,}$/;
     const phoneRegex = /[0-9]{10}/;
 
 
@@ -127,7 +127,7 @@ const RegisterNew = () =>{
             <div className="row gy-3">
                 <div className="col-11 col-md-6 col-lg-6 col-xl-6 mx-auto px-5">
                     <form>
-                       <>
+                    
                        <p className="text-center fs-4">Registration</p>
                         <div className="form-floating mb-3">
                             <input
@@ -163,7 +163,7 @@ const RegisterNew = () =>{
                             {passwordError && <p className="text-danger">{passwordError}</p>}
                         </div>
                         <div className="btn form-control mt-4 blueish-btn text-white shadow-soft" type="submit">Login</div>
-                        </>
+                    
                     </form>
                 </div>
             </div>
