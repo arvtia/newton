@@ -382,10 +382,11 @@ console.log(findAmount()); // Outputs: 3399
 const CheckOutForm = () =>{
     return(
         <div className="py-5 my-4 gy-lg-3">
+            <p className="fs-3 fw-bold my-3 text-center">CHECK OUT FORM</p>
             <div className="mb-3 mx-auto px-3 ">
                 <div className="row gy-2">
                     {/* first half showing the form */}
-                    <div className="col-12 col-lg-7 col-xl-7 px-5">
+                    <div className="col-12 col-lg-7 col-xl-7 px-2">
                         <div className="mb-3">
                             <p className="fs-4">Shipping Address</p>
                         </div>
@@ -452,7 +453,7 @@ const CheckOutForm = () =>{
                         </div>
                         {/* another input */}
                         <div className="mb-3">
-                            <div className="row my-3 g-3 ">
+                            <div className="row my-3 g-3 px-2 ">
                                 <button type="button" className="col-12 col-md-6 col-lg-6 col-xl-6 btn gentle-shadow  me-3">
                                     <div className="local">
                                         <div className="row">
@@ -504,10 +505,10 @@ const CheckOutForm = () =>{
                         </div>
                     </div>
                     {/* another input */}
-                    <div className="col-12 col-lg-5 col-xl-5 px-4 ">
+                    <div className="col-12 col-lg-5 col-xl-5 px-1 ">
                         <div className="mb-3 pt-5">
                             <div className="row gy-3 gy-xl-4">
-                                <div className="col-10 mx-auto mb-3 card pt-4 px-4">
+                                <div className="col-10 mx-auto mb-3 card pt-4 px-3">
                                     {cartItems.map((items) => (
                                         <div className="row mb-3" key={items.id}>
                                             <div className="col-10 d-flex align-items-center">
