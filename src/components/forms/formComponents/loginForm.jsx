@@ -570,6 +570,9 @@ const CheckOutForm = () =>{
                                             </div>
                                         </div>
                                     </div>
+                                    <div className="mb-3">
+                                        <button className="btn bg-dark text-white w-100 py-3">Continue to Payment</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
