@@ -364,17 +364,28 @@ const SubscriptionFrom = () =>{
 
 
 const cartItems = [
-    { img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyD7w1yNG3Ixi-ix0h6aUVZ5yuOM4TaDsYtQ&s",itemCount:1 ,category: "Male Jacket", ProdName:"Polar Puffer Jacket", prize: 999.00, },
-    { img: "https://www.monterrain.co.uk/images/products/large/4094073.jpg",itemCount:2, category: "Female Jacket", ProdName:"Snow Jackets Roxy", prize: 1200.00 }
+    { id:1, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyD7w1yNG3Ixi-ix0h6aUVZ5yuOM4TaDsYtQ&s", itemCount: 1, category: "Male Jacket", ProdName: "Polar Puffer Jacket", prize: 999.00 },
+    { id:2, img: "https://www.monterrain.co.uk/images/products/large/4094073.jpg", itemCount: 2, category: "Female Jacket", ProdName: "Snow Jackets Roxy", prize: 1200.00 }
 ];
 
+let totalPrize = 0
+let shippingTax = 9;
+let estimateTax = 5;
+const findAmount =()=> {
+    if (cartItems.length === 0) return 0; // If the cart is empty, return 0
+
+    totalPrize = cartItems.reduce((sum, item) => sum + (item.prize * item.itemCount), 0);
+    return totalPrize;
+}
+
+console.log(findAmount()); // Outputs: 3399
 const CheckOutForm = () =>{
     return(
         <div className="py-5 my-4 gy-lg-3">
             <div className="mb-3 mx-auto px-3 ">
                 <div className="row gy-2">
                     {/* first half showing the form */}
-                    <div className="col-12 col-lg-7 col-xl-7 px-4">
+                    <div className="col-12 col-lg-7 col-xl-7 px-5">
                         <div className="mb-3">
                             <p className="fs-4">Shipping Address</p>
                         </div>
@@ -493,29 +504,71 @@ const CheckOutForm = () =>{
                         </div>
                     </div>
                     {/* another input */}
-                    <div className="col-12 col-lg-5 col-xl-5 px-4">
-                        <div className="mb-3">
+                    <div className="col-12 col-lg-5 col-xl-5 px-4 ">
+                        <div className="mb-3 pt-5">
                             <div className="row gy-3 gy-xl-4">
-                                <div className="col-10 mx-auto">
+                                <div className="col-10 mx-auto mb-3 card pt-4 px-4">
                                     {cartItems.map((items) => (
-                                        <div className="row">
-                                            <div className="col-8">
-                                                <div className="p-1">
-                                                    <img src={items.img} alt="img-product" className="img-fluid rounded" style={{height:"120px", width:"120px", objectFit:"cover"}}/>
-                                                    <span className="bg-dark rounded text-white text-center">
-                                                        {items.itemCount}
-                                                    </span>
+                                        <div className="row mb-3" key={items.id}>
+                                            <div className="col-10 d-flex align-items-center">
+                                                <div className="p-1 position-relative">
+                                                    <img src={items.img} alt="img-product" className="img-fluid rounded" style={{height:"70px", width:"70px", objectFit:"cover"}}/>
+                                                    <div className="position-absolute top-0 start-100 translate-middle">
+                                                        <span className="bg-dark rounded-5 text-white px-2">{items.itemCount}</span>
+                                                    </div>
                                                 </div>
-                                                <div className="align-items-center py-auto"> 
-                                                    <p>{items.ProdName}</p>
-                                                    <p>{items.category}</p>
+                                                <div className="align-items-center lh-1" > 
+                                                    <p className="px-2 fs-5 fw-semibold">{items.ProdName}</p>
+                                                    <p className="px-2 text-secondary">{items.category}</p>
                                                 </div>
                                             </div>
-                                            <div className="col-4">
-                                                <p>${items.prize}</p>
+                                            <div className="col-auto p-0" >
+                                                <p className="py-3 fw-bold">${items.prize*items.itemCount}</p>
                                             </div>
                                         </div>
                                     ))}
+                                    
+
+                                    <div className="pt-5">
+                                        <div className="position-relative">
+                                            <i className="bi bi-globe-central-south-asia position-absolute top-50 start-0 translate-middle-y ms-3 "></i>
+                                            <input
+                                                type="text" 
+                                                className="form-control ps-5 font-monospace py-3 px-3" 
+                                                placeholder="Discount Code" 
+                                                aria-label="Username"
+                                            />
+                                            <i className="bi bi-search position-absolute top-50 end-0 translate-middle-y me-3"></i>
+                                        </div>
+                                    </div>
+                                    {/* amount and calculations */}
+                                    <div className="mb-3">
+                                        <div className="row gy-3 my-3">
+                                            <div className="col-12">
+                                                <div className=" d-flex justify-content-between">
+                                                    <p className="fs-5">Subtotal</p>
+                                                    <p className="fw-bold fs-5">${totalPrize}</p>
+                                                </div>
+                                                <div className=" d-flex justify-content-between">
+                                                    <p className="fs-6">Shipping </p>
+                                                    <p className="fw-bold fs-6">${shippingTax}</p>
+                                                </div>
+                                                <div className=" d-flex justify-content-between">
+                                                    <p className="fs-6">Estimate taxs 
+                                                        <span>
+                                                            <i className="bi bi-question-circle"></i>
+                                                        </span> </p>
+                                                    <p className="fw-bold fs-6">${estimateTax}</p>
+                                                </div>
+                                                <hr className="hr"/>
+                                                <div className="mb-3 d-flex justify-content-between">
+                                                    <p className="fs-5 fw-bold">Total</p>
+                                                    <p className="fs-5 fw-bold">${totalPrize+ shippingTax + estimateTax}</p>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
