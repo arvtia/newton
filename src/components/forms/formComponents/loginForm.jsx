@@ -7,6 +7,7 @@ const LoginFrom =() =>{
     const [ password, setPassword] = useState("")
     const [ emailError, setEmailError] = useState("");
     const [ passwordError, setPasswordError] = useState("");
+    const [ formData, setFormData] = useState([])
 
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     const passwordRegex= /.{8,}/;
@@ -21,7 +22,6 @@ const LoginFrom =() =>{
     }
   };
 
-  const [ formData, setFormData] = useState([])
 
   const handlePasswordChange = (e) => {
     const value = e.target.value;
