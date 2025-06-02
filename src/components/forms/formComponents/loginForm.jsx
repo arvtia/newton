@@ -368,6 +368,7 @@ const cartItems = [
     { id:2, img: "https://www.monterrain.co.uk/images/products/large/4094073.jpg", itemCount: 2, category: "Female Jacket", ProdName: "Snow Jackets Roxy", prize: 1200.00 }
 ];
 
+let messge ="submittion prevented";
 let totalPrize = 0
 let shippingTax = 9;
 let estimateTax = 5;
@@ -381,6 +382,11 @@ const findAmount =()=> {
 console.log(findAmount()); // Outputs: 3399
 const CheckOutForm = () =>{
     return(
+        <form 
+        onSubmit={(e) => e.preventDefault()}
+        
+        action="" 
+        >
         <div className="py-5 my-4 gy-lg-3">
             
             <div className="mb-3 mx-auto px-3 ">
@@ -518,7 +524,7 @@ const CheckOutForm = () =>{
                                                         <span className="bg-dark rounded-5 text-white px-2">{items.itemCount}</span>
                                                     </div>
                                                 </div>
-                                                <div className="align-items-center lh-1" > 
+                                                <div className="align-items-center lh-1 ps-3" > 
                                                     <p className="px-2 fs-5 fw-semibold">{items.ProdName}</p>
                                                     <p className="px-2 text-secondary">{items.category}</p>
                                                 </div>
@@ -571,7 +577,12 @@ const CheckOutForm = () =>{
                                         </div>
                                     </div>
                                     <div className="mb-3">
-                                        <button className="btn bg-dark text-white w-100 py-3">Continue to Payment</button>
+                                        <button 
+                                        type="submit" 
+                                        className="btn bg-dark text-white w-100 py-3"
+                                        >
+                                            Continue to Payment
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -580,6 +591,7 @@ const CheckOutForm = () =>{
                 </div>
             </div>
         </div>
+        </form>
     )
 }
 
