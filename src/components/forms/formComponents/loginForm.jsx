@@ -364,9 +364,9 @@ const SubscriptionFrom = () =>{
 
 
 const cartItems = [
-    { img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyD7w1yNG3Ixi-ix0h6aUVZ5yuOM4TaDsYtQ&s",itemCount:1 ,category: "Male Jacket", ProdName:"Polar Puffer Jacket", prize: 999, },
-    { img: "https://www.monterrain.co.uk/images/products/large/4094073.jpg",itemCount:2, category: "Female Jacket", ProdName:"Snow Jackets Roxy", prize: 1200 }
-]
+    { img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyD7w1yNG3Ixi-ix0h6aUVZ5yuOM4TaDsYtQ&s",itemCount:1 ,category: "Male Jacket", ProdName:"Polar Puffer Jacket", prize: 999.00, },
+    { img: "https://www.monterrain.co.uk/images/products/large/4094073.jpg",itemCount:2, category: "Female Jacket", ProdName:"Snow Jackets Roxy", prize: 1200.00 }
+];
 
 const CheckOutForm = () =>{
     return(
@@ -430,7 +430,7 @@ const CheckOutForm = () =>{
                         </div>
                         {/* another input must be here */}
                         {/* another half cart info */}
-                        <div className="col-12 col-lg-6 col-xl-6">
+                        <div className="col-12 col-lg-12 col-xl-12">
                             <label htmlFor="" className="label-sm py-2">Description</label>
                             <textarea 
                             type="text" 
@@ -497,7 +497,25 @@ const CheckOutForm = () =>{
                         <div className="mb-3">
                             <div className="row gy-3 gy-xl-4">
                                 <div className="col-10 mx-auto">
-                                    
+                                    {cartItems.map((items) => (
+                                        <div className="row">
+                                            <div className="col-8">
+                                                <div className="p-1">
+                                                    <img src={items.img} alt="img-product" className="img-fluid rounded" style={{height:"120px", width:"120px", objectFit:"cover"}}/>
+                                                    <span className="bg-dark rounded text-white text-center">
+                                                        {items.itemCount}
+                                                    </span>
+                                                </div>
+                                                <div className="align-items-center py-auto"> 
+                                                    <p>{items.ProdName}</p>
+                                                    <p>{items.category}</p>
+                                                </div>
+                                            </div>
+                                            <div className="col-4">
+                                                <p>${items.prize}</p>
+                                            </div>
+                                        </div>
+                                    ))}
                                 </div>
                             </div>
                         </div>
