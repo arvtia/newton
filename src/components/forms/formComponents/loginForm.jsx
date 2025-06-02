@@ -368,7 +368,6 @@ const cartItems = [
     { id:2, img: "https://www.monterrain.co.uk/images/products/large/4094073.jpg", itemCount: 2, category: "Female Jacket", ProdName: "Snow Jackets Roxy", prize: 1200.00 }
 ];
 
-let messge ="submittion prevented";
 let totalPrize = 0
 let shippingTax = 9;
 let estimateTax = 5;
@@ -400,11 +399,11 @@ const CheckOutForm = () =>{
                             <div className="row gy-3 gy-xl-3">
                                 <div className="col-6 col-md-6 col-lg-6">
                                     <label htmlFor="Fname" className="label-sm py-2">First Name*</label>
-                                    <input type="text" placeholder="Enter your name" className="form-control" />
+                                    <input type="text" placeholder="Enter your name" className="form-control" required />
                                 </div>
                                 <div className="col-6 col-md-6 col-lg-6">
                                     <label htmlFor="Fname" className="label-sm py-2">First Name*</label>
-                                    <input type="text" placeholder="Enter your name" className="form-control" />
+                                    <input type="text" placeholder="Enter your name" className="form-control"  required/>
                                 </div>
                             </div>
                         </div>
@@ -413,7 +412,7 @@ const CheckOutForm = () =>{
                             <div className="row gy-3 gy-xl-3">
                                 <div className="col-12 col-md-6 col-lg-6">
                                     <label htmlFor="Fname" className="label-sm py-2">Email*</label>
-                                    <input type="email" placeholder="jack@gmail.com" className="form-control" />
+                                    <input type="email" placeholder="jack@gmail.com" className="form-control" required />
                                 </div>
                                 <div className="col-12 col-lg-6 col-xl-6">
                                     <label htmlFor="inputgorup" className="label-sm py-2">Phone number*</label>
@@ -434,15 +433,15 @@ const CheckOutForm = () =>{
                             <div className="row gy-3">
                                 <div className="col-4 col-lg-4 col-xl-4">
                                     <label htmlFor="" className="label-sm py-2">City*</label>
-                                    <input type="text" className="form-control" placeholder="city"/>
+                                    <input type="text" className="form-control" placeholder="city" required/>
                                 </div>
                                 <div className="col-4 col-lg-4 col-xl-4">
                                     <label htmlFor="" className="label-sm py-2">State*</label>
-                                    <input type="text" className="form-control" placeholder="state"/>
+                                    <input type="text" className="form-control" placeholder="state" required/>
                                 </div>
                                 <div className="col-4 col-lg-4 col-xl-4">
                                     <label htmlFor="" className="label-sm py-2">Zip code</label>
-                                    <input type="text" className="form-control" placeholder="zip code"/>
+                                    <input type="text" className="form-control" placeholder="zip code" required/>
                                 </div>
                             </div>
                         </div>
@@ -455,6 +454,7 @@ const CheckOutForm = () =>{
                             className="form-control"
                             placeholder="Enter a Description"
                             style={{height:"100px"}}
+                            required 
                             />
                         </div>
                         {/* another input */}
@@ -542,7 +542,7 @@ const CheckOutForm = () =>{
                                             <input
                                                 type="text" 
                                                 className="form-control ps-5 font-monospace py-3 px-3" 
-                                                placeholder="Discount Code" 
+                                                placeholder="Discount Code (optional)" 
                                                 aria-label="Username"
                                             />
                                             <i className="bi bi-search position-absolute top-50 end-0 translate-middle-y me-3"></i>

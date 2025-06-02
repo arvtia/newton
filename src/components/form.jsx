@@ -4,7 +4,7 @@ const Forms =() =>{
             <div className="container">
                 <div className="row gy-lg-4 py-3">
                     <div className="col-12 col-lg-11 col-xl-11 justify-content-center">
-                        <div className="col-6 col-md-6 col-lg-6 col-xl-5 mx-auto mt-5 ">
+                        <div className="col-12 col-md-6 col-lg-6 col-xl-5 mx-auto mt-5 ">
                             <>
                             {/* Pills navs */}
                             <ul className="nav nav-pills nav-justified mb-3 " id="ex1" role="tablist">
