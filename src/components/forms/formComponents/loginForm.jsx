@@ -21,6 +21,7 @@ const LoginFrom =() =>{
     }
   };
 
+  const [ formData, setFormData] = useState([])
 
   const handlePasswordChange = (e) => {
     const value = e.target.value;
@@ -32,6 +33,19 @@ const LoginFrom =() =>{
         setPasswordError("");
     }
   };
+
+ const handleSubmit = (e) => {
+  e.preventDefault();
+  
+  // Store form data as an object
+  const newEntry = { email, password };
+
+  // Properly update state using spread operator
+  setFormData([...formData, newEntry]);
+
+  console.log("Updated formData:", formData);
+};
+
 
 
     return(
@@ -66,7 +80,7 @@ const LoginFrom =() =>{
                             <label >Password</label>
                             { passwordError && <p className="text-danger">{passwordError}</p>}
                         </div>
-                        <button className="btn form-control mt-4 blueish-btn text-white shadow-soft" type="submit">Login</button>
+                        <button className="btn form-control mt-4 blueish-btn text-white shadow-soft" type="submit" onClick={handleSubmit}>Login</button>
                         
                     </form>
                 </div>
