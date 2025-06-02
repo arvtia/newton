@@ -363,10 +363,15 @@ const SubscriptionFrom = () =>{
 }
 
 
+const cartItems = [
+    { img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyD7w1yNG3Ixi-ix0h6aUVZ5yuOM4TaDsYtQ&s",itemCount:1 ,category: "Male Jacket", ProdName:"Polar Puffer Jacket", prize: 999, },
+    { img: "https://www.monterrain.co.uk/images/products/large/4094073.jpg",itemCount:2, category: "Female Jacket", ProdName:"Snow Jackets Roxy", prize: 1200 }
+]
+
 const CheckOutForm = () =>{
     return(
         <div className="py-5 my-4 gy-lg-3">
-            <div className="mb-3">
+            <div className="mb-3 mx-auto px-3 ">
                 <div className="row gy-2">
                     {/* first half showing the form */}
                     <div className="col-12 col-lg-7 col-xl-7 px-4">
@@ -388,7 +393,7 @@ const CheckOutForm = () =>{
                         {/* another input box */}
                         <div className="mb-3">
                             <div className="row gy-3 gy-xl-3">
-                                <div className="col-6 col-md-6 col-lg-6">
+                                <div className="col-12 col-md-6 col-lg-6">
                                     <label htmlFor="Fname" className="label-sm py-2">Email*</label>
                                     <input type="email" placeholder="jack@gmail.com" className="form-control" />
                                 </div>
@@ -410,11 +415,11 @@ const CheckOutForm = () =>{
                         <div className="mb-3">
                             <div className="row gy-3">
                                 <div className="col-4 col-lg-4 col-xl-4">
-                                    <label htmlFor="" className="label-sm py-2">City</label>
+                                    <label htmlFor="" className="label-sm py-2">City*</label>
                                     <input type="text" className="form-control" placeholder="city"/>
                                 </div>
                                 <div className="col-4 col-lg-4 col-xl-4">
-                                    <label htmlFor="" className="label-sm py-2">State</label>
+                                    <label htmlFor="" className="label-sm py-2">State*</label>
                                     <input type="text" className="form-control" placeholder="state"/>
                                 </div>
                                 <div className="col-4 col-lg-4 col-xl-4">
@@ -423,12 +428,79 @@ const CheckOutForm = () =>{
                                 </div>
                             </div>
                         </div>
+                        {/* another input must be here */}
+                        {/* another half cart info */}
+                        <div className="col-12 col-lg-6 col-xl-6">
+                            <label htmlFor="" className="label-sm py-2">Description</label>
+                            <textarea 
+                            type="text" 
+                            className="form-control"
+                            placeholder="Enter a Description"
+                            style={{height:"100px"}}
+                            />
+                        </div>
+                        {/* another input */}
+                        <div className="mb-3">
+                            <div className="row my-3 g-3 ">
+                                <button type="button" className="col-12 col-md-6 col-lg-6 col-xl-6 btn gentle-shadow  me-3">
+                                    <div className="local">
+                                        <div className="row">
+                                            <div className="col-8 ">
+                                                <div className="form-check">
+                                                    <input
+                                                        className="form-check-input"
+                                                        type="checkbox"
+                                                        defaultValue=""
+                                                        id="defaultCheck1"
+                                                    />
+                                                    <label className="form-check-label" htmlFor="defaultCheck1">
+                                                        Free shipping
+                                                    </label>
+                                                </div>
+                                                <p className="fs-6 text-secondary">7-25 days</p>
 
+                                            </div>
+                                            <div className="col-4">
+                                                <p className="fs-6 fw-bold">$9</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </button>
+                                <button type="button" className="col-12 col-md-6 col-lg-6 col-xl-6 btn gentle-shadow ">
+                                    <div className="local">
+                                        <div className="row ">
+                                            <div className="col-8">
+                                                <div className="form-check">
+                                                    <input
+                                                        className="form-check-input"
+                                                        type="checkbox"
+                                                        defaultValue=""
+                                                        id="defaultCheck1"
+                                                    />
+                                                    <label className="form-check-label" htmlFor="defaultCheck1">
+                                                        Express shipping
+                                                    </label>
+                                                </div>
+                                                <p className="fs-6 text-secondary">1-3 days</p>
+                                            </div>
+                                            <div className="col-4">
+                                                <p className="fs-6 fw-bold">$9</p>
+                                            </div>
+                                        </div>
+                                    </div>        
+                                </button>
+                            </div>
+                        </div>
                     </div>
-
-                    {/* another half cart info */}
-                    <div className="col-12 col-lg-4 col-xl-4">
-                    
+                    {/* another input */}
+                    <div className="col-12 col-lg-5 col-xl-5 px-4">
+                        <div className="mb-3">
+                            <div className="row gy-3 gy-xl-4">
+                                <div className="col-10 mx-auto">
+                                    
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
