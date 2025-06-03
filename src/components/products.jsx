@@ -1,5 +1,5 @@
 
-import { useParams , Link } from "react-router-dom";
+import {  Link } from "react-router-dom";
 
 
 const productsList= [
@@ -56,7 +56,7 @@ const Products = () => {
                 <div className="col-12 col-lg-12 col-xl-12 d-flex mx-auto overflow-x-scroll">
                     {productsList.map((prod) => (
                         <div className="card px-3 py-3 mx-2 my-2" key={prod.Prodid} style={{ minWidth: "290px" }}>
-                            <img src={prod.ProdImg} alt="product-img" className="img-fluid rounded"  style={{objectFit:"cover", height:"280px", width:"280px", objectFit:"cover"}}/>
+                            <img src={prod.ProdImg} alt="product-img" className="img-fluid rounded"  style={{ height:"280px", width:"280px", objectFit:"cover"}}/>
                             <hr className="hr mb-2" />
                             <h4 className="text-primary px-2">{prod.ProdName}</h4>
                             <div className="mb-2 px-2">
