@@ -203,6 +203,7 @@ const ContactUs = () =>{
 
     const handleSelect = (e) => {
     const value = e.target.value;
+    setCategory(value);
 
     // Validation: Ensure the user selects a valid category
     if (value === "") {
