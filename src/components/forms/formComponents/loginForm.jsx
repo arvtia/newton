@@ -189,6 +189,39 @@ const RegisterNew = () =>{
 
 
 const ContactUs = () =>{
+
+    const [ Catergory , setCategory] = useState("");
+    const [ errorCategory, setErrorCategory] = useState("");
+    const [ email , setEmail] = useState("");
+    const [ firstName, setFirstName] = useState("");
+    const [ lastName, setLastName] = useState("");
+    const [ emailError, setEmailError] = useState("");
+    const [ firstNameError, setFirstNameError ] = useState("");
+    const [ lastNameError, setLastNameError] = useState("");
+    const [ comment , setComment ] = useState("");
+    const [ commentError, setCommentError] = useState("");
+
+    const handleSelect = (e) => {
+    const value = e.target.value;
+
+    // Validation: Ensure the user selects a valid category
+    if (value === "") {
+            setErrorCategory("Please select a valid category.");
+        } else {
+            setErrorCategory(""); // No error if a valid category is selected
+        }
+    };
+
+    const handleEmailChange =(e) =>{
+        const value = e.target.value;
+        setEmail(value);
+
+        
+    }
+
+
+
+    
     return(
         <div className="py-4 my-5">
             <div className="row py-lg-5 gy-4">
@@ -199,16 +232,18 @@ const ContactUs = () =>{
                             <div className="form-floating">
                                 <select
                                     className="form-select"
-                                    id="floatingSelect"
+                                    id="floatingSelect" 
+                                    onChange={handleSelect}
+                                    value={Catergory}
                                 >
-                                <option >Choose Catergory</option>
-                                    <option value={1}>Customer Support</option>
-                                    <option value={2}>Career</option>
-                                    <option value={3}>Report Complaint</option>
+                                    <option value={""}>Choose Catergory</option>
+                                    <option value={"1"}>Customer Support</option>
+                                    <option value={"2"}>Career</option>
+                                    <option value={"3"}>Report Complaint</option>
                                 </select>
                                 <label htmlFor="floatingSelect">Works with selects</label>
                             </div>
-
+                                    { errorCategory && <p className="text-danger">{errorCategory}</p>}
                         </div>
                         <div className="mb-3">
                             <div className="form-floating">
